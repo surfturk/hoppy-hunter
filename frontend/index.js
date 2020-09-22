@@ -2,6 +2,9 @@ document.addEventListener("DOMContentLoaded", () => {
     createForm();
     fetchBreweries();
 
+    fetchBeers();
+    beerForm();
+
 })
   
 const BASE_URL = "http://localhost:3000"
@@ -110,11 +113,12 @@ function deleteBrewery() {
        beersForm.innerHTML +=
        `
        <form>
+          Brewery ID: <input type="integer" id="brewery_id"></input><br><br>
            Name: <input type="text" id="name"></input><br>
            Style: <input type="text" id="style"></input><br>
            ABV: <input type="text" id="abv"></input><br>
            Logo URL: <input type="text" id="img_src"></input><br>
-           <input type="submit" value="Create Brewery">
+           <input type="submit" value="Create Beer">
        </form>
        `
       
@@ -123,38 +127,44 @@ function deleteBrewery() {
    
    }
 
-   function breweriesFormSubmission() {
+   function beersFormSubmission() {
        event.preventDefault();
+       let brewery_id = document.getElementById("brewery_id").value
       let name = document.getElementById("name").value
-      let location = document.getElementById("location").value
+      let style = document.getElementById("style").value
+      let abv = document.getElementById("abv").value
+      let img_src = document.getElementById("img_src").value
 
-      let brewery = {
+      let beer = {
+          brewery_id: brewery_id,
          name: name,
-         location: location
+         style: style,
+         abv: abv,
+         img_src: img_src
       }
 
-      fetch(`${BASE_URL}/breweries`, {
+      fetch(`${BASE_URL}/beers`, {
           method: "POST",
           headers: {
               'Accept': `application/json`,
               'Content-type': 'application/json'
           },
-          body: JSON.stringify(brewery)
+          body: JSON.stringify(beer)
       })
       .then(resp => resp.json())
-      .then(brewery => {
-          let b = new Brewery(brewery.id,brewery.name, brewery.location)
-          b.renderBrewery();
+      .then(beer => {
+          let b = new Beer (beer.name, beer.style, beer.abv, beer.img_src)
+          b.renderBeer();
       })
    }
    
 
 
    //delete
-function deleteBrewery() {
-   let breweryId = parseInt(event.target.dataset.id)
+function deleteBeer() {
+   let beerId = parseInt(event.target.dataset.id)
 
-   fetch(`${BASE_URL}/breweries/${breweryId}`, {
+   fetch(`${BASE_URL}/beers/${beerId}`, {
        method: 'DELETE'
    }) 
 

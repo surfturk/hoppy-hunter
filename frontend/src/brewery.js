@@ -11,7 +11,8 @@ class Brewery {
         breweriesDiv.innerHTML += 
          `
          <ul>
-          <li> Brewery:  ${this.name}</li>
+          <li>Brewery ID: ${this.id}</li>
+          <li> Brewery Name:  ${this.name}</li>
           <li> Brewery Location: ${this.location}</li>
          </ul>
          
