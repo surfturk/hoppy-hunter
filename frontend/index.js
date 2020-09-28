@@ -95,10 +95,10 @@ function deleteBrewery() {
         fetch(`${BASE_URL}/beers`)
         .then(resp => resp.json())
         .then(beers => {
-
+console.log(beers)
            for (const beer of beers){
                
-               let b = new Beer( beer.id, beer.name, beer.style, beer.abv, beer.img_src, beer.brewery_id )
+               let b = new Beer(beer.id, beer.brewery_id, beer.name, beer.style, beer.abv, beer.img_src)
                b.renderBeer();
            }
 
@@ -114,7 +114,7 @@ function deleteBrewery() {
        `
        <form>
           Brewery ID: <input type="integer" id="brewery_id"></input><br><br>
-           Name: <input type="text" id="name"></input><br>
+           Name: <input type="text" id="beer_name"></input><br>
            Style: <input type="text" id="style"></input><br>
            ABV: <input type="text" id="abv"></input><br>
            Logo URL: <input type="text" id="img_src"></input><br>
@@ -130,7 +130,7 @@ function deleteBrewery() {
    function beersFormSubmission() {
        event.preventDefault();
        let brewery_id = document.getElementById("brewery_id").value
-      let name = document.getElementById("name").value
+      let name = document.getElementById("beer_name").value
       let style = document.getElementById("style").value
       let abv = document.getElementById("abv").value
       let img_src = document.getElementById("img_src").value
@@ -153,7 +153,7 @@ function deleteBrewery() {
       })
       .then(resp => resp.json())
       .then(beer => {
-          let b = new Beer (beer.name, beer.style, beer.abv, beer.img_src)
+          let b = new Beer (beer.id, beer.brewery_id, beer.name, beer.style, beer.abv, beer.img_src)
           b.renderBeer();
       })
    }

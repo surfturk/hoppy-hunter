@@ -1,11 +1,12 @@
 class Beer {
-    constructor(id, name, style, abv, img_src, brewery_id) {
+    constructor(id, brewery_id, name, style, abv, img_src) {
       this.id = id;
+      this.brewery_id = brewery_id;
       this.name = name;
       this.style = style;
       this.abv = abv;
       this.img_src = img_src;
-      this.brewery_id = brewery_id;
+      
 
     }
     
@@ -22,7 +23,7 @@ class Beer {
           <li> Beer Logo ${this.img_src}</li>
          </ul>
          
-         <button class="delete-bttn" data-id=${this.id} onclick="deleteBrewery()">Delete Beer</button>
+         <button class="delete-bttn" data-id=${this.id} onclick="deleteBeer()">Delete Beer</button>
          `
     }
 
