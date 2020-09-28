@@ -46,6 +46,6 @@ class BeersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def beer_params
-      params.require(:beer).permit(:name, :style, :abv, :img_src, :brewery_id)
+      params.require(:beer).permit(:id, :brewery_id, :name, :style, :abv, :img_src)
     end
 end
