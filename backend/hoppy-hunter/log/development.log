@@ -4270,3 +4270,1596 @@ Completed 200 OK in 123ms (Views: 112.5ms | ActiveRecord: 5.3ms | Allocations: 7
 Completed 200 OK in 132ms (Views: 121.7ms | ActiveRecord: 1.9ms | Allocations: 851721)
 
 
+Started GET "/" for ::1 at 2020-09-30 17:09:46 -0500
+  [1m[35m (23.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (17.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/berkleybrown/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/berkleybrown/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 45.8ms | Allocations: 315)
+Completed 200 OK in 146ms (Views: 108.6ms | ActiveRecord: 0.0ms | Allocations: 1594)
+
+
+Started GET "/beers" for ::1 at 2020-09-30 17:10:05 -0500
+Started GET "/breweries" for ::1 at 2020-09-30 17:10:05 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BeersController#index as */*
+Processing by BreweriesController#index as */*
+  [1m[36mBeer Load (4.0ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  [1m[36mBrewery Load (0.6ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 102ms (Views: 71.2ms | ActiveRecord: 2.1ms | Allocations: 12128)
+
+
+Completed 200 OK in 163ms (Views: 77.5ms | ActiveRecord: 6.3ms | Allocations: 10227)
+
+
+Started DELETE "/beers/13" for ::1 at 2020-09-30 17:28:26 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BeersController#destroy as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mBeer Load (9.6ms)[0m  [1m[34mSELECT "beers".* FROM "beers" WHERE "beers"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/beers_controller.rb:44:in `set_beer'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/beers_controller.rb:38:in `destroy'
+  [1m[36mBeer Destroy (25.7ms)[0m  [1m[31mDELETE FROM "beers" WHERE "beers"."id" = ?[0m  [["id", 13]]
+  ↳ app/controllers/beers_controller.rb:38:in `destroy'
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/beers" for ::1 at 2020-09-30 17:28:26 -0500
+Started GET "/breweries" for ::1 at 2020-09-30 17:28:26 -0500
+  ↳ app/controllers/beers_controller.rb:38:in `destroy'
+Completed 204 No Content in 232ms (ActiveRecord: 40.2ms | Allocations: 4949)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.5ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Processing by BreweriesController#index as */*
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.5ms | Allocations: 1264)
+
+
+  [1m[36mBrewery Load (13.8ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 23ms (Views: 8.5ms | ActiveRecord: 13.8ms | Allocations: 1171)
+
+
+Started DELETE "/beers/15" for ::1 at 2020-09-30 17:28:38 -0500
+Processing by BeersController#destroy as */*
+  Parameters: {"id"=>"15"}
+  [1m[36mBeer Load (0.6ms)[0m  [1m[34mSELECT "beers".* FROM "beers" WHERE "beers"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/beers_controller.rb:44:in `set_beer'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/beers_controller.rb:38:in `destroy'
+  [1m[36mBeer Destroy (54.1ms)[0m  [1m[31mDELETE FROM "beers" WHERE "beers"."id" = ?[0m  [["id", 15]]
+  ↳ app/controllers/beers_controller.rb:38:in `destroy'
+  [1m[35m (91.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/beers_controller.rb:38:in `destroy'
+Completed 204 No Content in 160ms (ActiveRecord: 146.7ms | Allocations: 2726)
+
+
+Started GET "/beers" for ::1 at 2020-09-30 17:28:39 -0500
+Started GET "/breweries" for ::1 at 2020-09-30 17:28:39 -0500
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+Processing by BreweriesController#index as */*
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+  [1m[36mBrewery Load (0.5ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.3ms | Allocations: 1922)
+
+
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.5ms | Allocations: 2325)
+
+
+Started DELETE "/breweries/15" for ::1 at 2020-09-30 18:07:02 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BreweriesController#destroy as */*
+  Parameters: {"id"=>"15"}
+  [1m[36mBrewery Load (0.6ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/breweries_controller.rb:44:in `set_brewery'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/breweries_controller.rb:38:in `destroy'
+  [1m[36mBrewery Destroy (22.5ms)[0m  [1m[31mDELETE FROM "breweries" WHERE "breweries"."id" = ?[0m  [["id", 15]]
+  ↳ app/controllers/breweries_controller.rb:38:in `destroy'
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/breweries_controller.rb:38:in `destroy'
+Completed 204 No Content in 47ms (ActiveRecord: 24.8ms | Allocations: 2518)
+
+
+Started DELETE "/breweries/15" for ::1 at 2020-09-30 18:07:09 -0500
+Processing by BreweriesController#destroy as */*
+  Parameters: {"id"=>"15"}
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/breweries_controller.rb:44:in `set_brewery'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms | Allocations: 611)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Brewery with 'id'=15):
+  
+app/controllers/breweries_controller.rb:44:in `set_brewery'
+Started DELETE "/breweries/15" for ::1 at 2020-09-30 18:07:24 -0500
+Processing by BreweriesController#destroy as */*
+  Parameters: {"id"=>"15"}
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/breweries_controller.rb:44:in `set_brewery'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms | Allocations: 606)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Brewery with 'id'=15):
+  
+app/controllers/breweries_controller.rb:44:in `set_brewery'
+Started GET "/breweries" for ::1 at 2020-09-30 18:07:27 -0500
+Started GET "/beers" for ::1 at 2020-09-30 18:07:27 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BreweriesController#index as */*
+  [1m[36mBrewery Load (0.5ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+Processing by BeersController#index as */*
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 24ms (Views: 23.1ms | ActiveRecord: 0.5ms | Allocations: 1164)
+
+
+  [1m[36mBeer Load (17.4ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 23ms (Views: 5.0ms | ActiveRecord: 17.4ms | Allocations: 1055)
+
+
+Started POST "/breweries" for ::1 at 2020-09-30 18:07:35 -0500
+Processing by BreweriesController#create as JSON
+  Parameters: {"name"=>"Stone Brewery", "location"=>"San Diego, CA", "brewery"=>{"name"=>"Stone Brewery", "location"=>"San Diego, CA"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/breweries_controller.rb:20:in `create'
+  [1m[36mBrewery Create (36.4ms)[0m  [1m[32mINSERT INTO "breweries" ("name", "location", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Stone Brewery"], ["location", "San Diego, CA"], ["created_at", "2020-09-30 23:07:35.377676"], ["updated_at", "2020-09-30 23:07:35.377676"]]
+  ↳ app/controllers/breweries_controller.rb:20:in `create'
+  [1m[35m (34.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/breweries_controller.rb:20:in `create'
+Completed 201 Created in 82ms (Views: 1.8ms | ActiveRecord: 70.9ms | Allocations: 2808)
+
+
+Started POST "/beers" for ::1 at 2020-09-30 18:08:06 -0500
+Processing by BeersController#create as JSON
+  Parameters: {"brewery_id"=>"16", "name"=>"Arrogant Bastard", "style"=>"Ale", "abv"=>"7.5", "img_src"=>"wefqerg", "beer"=>{"name"=>"Arrogant Bastard", "style"=>"Ale", "abv"=>"7.5", "img_src"=>"wefqerg", "brewery_id"=>"16"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+  [1m[36mBeer Create (11.8ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "abv", "img_src", "brewery_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Arrogant Bastard"], ["style", "Ale"], ["abv", "7.5"], ["img_src", "wefqerg"], ["brewery_id", 16], ["created_at", "2020-09-30 23:08:06.262275"], ["updated_at", "2020-09-30 23:08:06.262275"]]
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+Completed 201 Created in 218ms (Views: 1.8ms | ActiveRecord: 20.2ms | Allocations: 6626)
+
+
+Started POST "/breweries" for ::1 at 2020-09-30 18:08:32 -0500
+Processing by BreweriesController#create as JSON
+  Parameters: {"name"=>"Bud", "location"=>"Missouri", "brewery"=>{"name"=>"Bud", "location"=>"Missouri"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/breweries_controller.rb:20:in `create'
+  [1m[36mBrewery Create (0.9ms)[0m  [1m[32mINSERT INTO "breweries" ("name", "location", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Bud"], ["location", "Missouri"], ["created_at", "2020-09-30 23:08:32.572305"], ["updated_at", "2020-09-30 23:08:32.572305"]]
+  ↳ app/controllers/breweries_controller.rb:20:in `create'
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/breweries_controller.rb:20:in `create'
+Completed 201 Created in 7ms (Views: 0.5ms | ActiveRecord: 2.5ms | Allocations: 2493)
+
+
+Started GET "/breweries" for ::1 at 2020-09-30 18:29:05 -0500
+Started GET "/beers" for ::1 at 2020-09-30 18:29:05 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BreweriesController#index as */*
+Processing by BeersController#index as */*
+  [1m[36mBrewery Load (23.0ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  [1m[36mBeer Load (0.7ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 33ms (Views: 9.2ms | ActiveRecord: 23.0ms | Allocations: 1877)
+
+
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.7ms | Allocations: 1944)
+
+
+Started GET "/breweries" for ::1 at 2020-09-30 18:31:19 -0500
+Started GET "/beers" for ::1 at 2020-09-30 18:31:19 -0500
+Processing by BreweriesController#index as */*
+  [1m[36mBrewery Load (4.0ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.7ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 16ms (Views: 11.3ms | ActiveRecord: 4.0ms | Allocations: 2032)
+
+
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 0.7ms | Allocations: 2149)
+
+
+Started GET "/breweries" for ::1 at 2020-09-30 18:32:02 -0500
+Processing by BreweriesController#index as */*
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Started GET "/beers" for ::1 at 2020-09-30 18:32:02 -0500
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.3ms | Allocations: 1339)
+
+
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.5ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.5ms | Allocations: 972)
+
+
+Started GET "/breweries" for ::1 at 2020-09-30 18:32:36 -0500
+Started GET "/beers" for ::1 at 2020-09-30 18:32:36 -0500
+Processing by BreweriesController#index as */*
+Processing by BeersController#index as */*
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  [1m[36mBeer Load (0.1ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.2ms | Allocations: 1835)
+
+
+Completed 200 OK in 5ms (Views: 5.1ms | ActiveRecord: 0.1ms | Allocations: 1919)
+
+
+Started GET "/breweries" for ::1 at 2020-09-30 18:33:23 -0500
+Started GET "/beers" for ::1 at 2020-09-30 18:33:23 -0500
+Processing by BreweriesController#index as */*
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Processing by BeersController#index as */*
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.2ms | Allocations: 1337)
+
+
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.3ms | Allocations: 1184)
+
+
+Started GET "/beers" for ::1 at 2020-09-30 18:43:11 -0500
+Started GET "/breweries" for ::1 at 2020-09-30 18:43:11 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BeersController#index as */*
+Processing by BreweriesController#index as */*
+  [1m[36mBeer Load (20.4ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  [1m[36mBrewery Load (0.6ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 29ms (Views: 7.3ms | ActiveRecord: 20.4ms | Allocations: 1786)
+
+
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.6ms | Allocations: 1954)
+
+
+Started GET "/breweries" for ::1 at 2020-09-30 18:46:23 -0500
+Started GET "/beers" for ::1 at 2020-09-30 18:46:23 -0500
+Processing by BreweriesController#index as */*
+Processing by BeersController#index as */*
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 55ms (Views: 53.9ms | ActiveRecord: 0.3ms | Allocations: 1842)
+
+
+Completed 200 OK in 54ms (Views: 53.5ms | ActiveRecord: 0.2ms | Allocations: 1935)
+
+
+Started GET "/breweries" for ::1 at 2020-09-30 18:47:15 -0500
+Processing by BreweriesController#index as */*
+  [1m[36mBrewery Load (26.6ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 32ms (Views: 5.3ms | ActiveRecord: 26.6ms | Allocations: 1124)
+
+
+Started GET "/beers" for ::1 at 2020-09-30 18:47:15 -0500
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.3ms | Allocations: 972)
+
+
+Started GET "/" for ::1 at 2020-10-01 08:21:18 -0500
+  [1m[35m (22.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (32.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/berkleybrown/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/berkleybrown/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 80.0ms | Allocations: 315)
+Completed 200 OK in 161ms (Views: 108.8ms | ActiveRecord: 0.0ms | Allocations: 1594)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 08:21:24 -0500
+Started GET "/beers" for ::1 at 2020-10-01 08:21:24 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BeersController#index as */*
+Processing by BreweriesController#index as */*
+  [1m[36mBeer Load (5.6ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  [1m[36mBrewery Load (0.5ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 120ms (Views: 42.8ms | ActiveRecord: 6.5ms | Allocations: 10058)
+
+
+Completed 200 OK in 54ms (Views: 27.4ms | ActiveRecord: 1.1ms | Allocations: 12099)
+
+
+Started GET "/beers" for ::1 at 2020-10-01 08:21:50 -0500
+Started GET "/breweries" for ::1 at 2020-10-01 08:21:50 -0500
+Processing by BeersController#index as */*
+Processing by BreweriesController#index as */*
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.3ms | Allocations: 1703)
+
+
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.3ms | Allocations: 2139)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 08:22:01 -0500
+Started GET "/beers" for ::1 at 2020-10-01 08:22:01 -0500
+Processing by BreweriesController#index as */*
+Processing by BeersController#index as */*
+  [1m[36mBrewery Load (0.1ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  [1m[36mBeer Load (0.1ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.1ms | Allocations: 1835)
+
+
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.1ms | Allocations: 1919)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 08:22:19 -0500
+Started GET "/beers" for ::1 at 2020-10-01 08:22:19 -0500
+Processing by BreweriesController#index as */*
+Processing by BeersController#index as */*
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  [1m[36mBeer Load (0.1ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.2ms | Allocations: 1852)
+
+
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.1ms | Allocations: 1939)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 08:22:31 -0500
+Started GET "/beers" for ::1 at 2020-10-01 08:22:31 -0500
+Processing by BreweriesController#index as */*
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.1ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.1ms | Allocations: 976)
+
+
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.2ms | Allocations: 2285)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 08:44:52 -0500
+Started GET "/beers" for ::1 at 2020-10-01 08:44:52 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BeersController#index as */*
+Processing by BreweriesController#index as */*
+  [1m[36mBeer Load (1.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 1.3ms | Allocations: 1355)
+
+
+  [1m[36mBrewery Load (4.8ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 8.2ms | ActiveRecord: 4.8ms | Allocations: 2247)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 08:46:26 -0500
+Started GET "/beers" for ::1 at 2020-10-01 08:46:26 -0500
+Processing by BreweriesController#index as */*
+Processing by BeersController#index as */*
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.2ms | Allocations: 1839)
+
+
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.2ms | Allocations: 1934)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 08:50:14 -0500
+Started GET "/beers" for ::1 at 2020-10-01 08:50:14 -0500
+Processing by BreweriesController#index as */*
+Processing by BeersController#index as */*
+  [1m[36mBrewery Load (133.4ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  [1m[36mBeer Load (0.6ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 142ms (Views: 7.4ms | ActiveRecord: 133.4ms | Allocations: 2057)
+
+
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.6ms | Allocations: 1941)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 08:50:53 -0500
+Started GET "/beers" for ::1 at 2020-10-01 08:50:53 -0500
+Processing by BreweriesController#index as */*
+  [1m[36mBrewery Load (1.0ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.3ms | Allocations: 971)
+
+
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 22ms (Views: 20.2ms | ActiveRecord: 1.0ms | Allocations: 2434)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 08:52:13 -0500
+Started GET "/beers" for ::1 at 2020-10-01 08:52:13 -0500
+Processing by BreweriesController#index as */*
+Processing by BeersController#index as */*
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.3ms | Allocations: 1835)
+
+
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.3ms | Allocations: 2131)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 08:52:33 -0500
+Started GET "/beers" for ::1 at 2020-10-01 08:52:33 -0500
+Processing by BreweriesController#index as */*
+  [1m[36mBrewery Load (0.6ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.6ms | Allocations: 1079)
+
+
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.6ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.6ms | Allocations: 972)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 08:55:34 -0500
+Started GET "/beers" for ::1 at 2020-10-01 08:55:34 -0500
+Processing by BreweriesController#index as */*
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+Processing by BeersController#index as */*
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.3ms | Allocations: 1492)
+
+
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.3ms | Allocations: 1465)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 08:57:00 -0500
+Started GET "/beers" for ::1 at 2020-10-01 08:57:00 -0500
+Processing by BreweriesController#index as */*
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Processing by BeersController#index as */*
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.3ms | Allocations: 1155)
+
+
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.3ms | Allocations: 1182)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 09:08:00 -0500
+Started GET "/beers" for ::1 at 2020-10-01 09:08:00 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BreweriesController#index as */*
+Processing by BeersController#index as */*
+  [1m[36mBrewery Load (18.0ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  [1m[36mBeer Load (8.9ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 36ms (Views: 16.7ms | ActiveRecord: 18.0ms | Allocations: 2062)
+
+
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 17ms (Views: 7.4ms | ActiveRecord: 8.9ms | Allocations: 1977)
+
+
+Started GET "/beers" for ::1 at 2020-10-01 09:08:11 -0500
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.3ms | Allocations: 1244)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 09:08:11 -0500
+Processing by BreweriesController#index as */*
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 109ms (Views: 107.1ms | ActiveRecord: 0.3ms | Allocations: 1125)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 09:09:32 -0500
+Started GET "/beers" for ::1 at 2020-10-01 09:09:32 -0500
+Processing by BreweriesController#index as */*
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  [1m[36mBrewery Load (0.5ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.3ms | Allocations: 1586)
+
+
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.5ms | Allocations: 2073)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 09:14:21 -0500
+Started GET "/beers" for ::1 at 2020-10-01 09:14:21 -0500
+Processing by BreweriesController#index as */*
+Processing by BeersController#index as */*
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.3ms | Allocations: 1586)
+
+
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.3ms | Allocations: 2073)
+
+
+Started GET "/beers" for ::1 at 2020-10-01 09:16:28 -0500
+Started GET "/breweries" for ::1 at 2020-10-01 09:16:28 -0500
+Processing by BeersController#index as */*
+Processing by BreweriesController#index as */*
+  [1m[36mBeer Load (12.8ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+  [1m[36mBrewery Load (0.9ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+Completed 200 OK in 22ms (Views: 8.3ms | ActiveRecord: 12.8ms | Allocations: 1165)
+
+
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.9ms | Allocations: 2098)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 09:20:13 -0500
+Started GET "/beers" for ::1 at 2020-10-01 09:20:13 -0500
+Processing by BeersController#index as */*
+Processing by BreweriesController#index as */*
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  [1m[36mBrewery Load (0.4ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.3ms | Allocations: 1740)
+
+
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.4ms | Allocations: 1922)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 09:20:22 -0500
+Started GET "/beers" for ::1 at 2020-10-01 09:20:22 -0500
+Processing by BreweriesController#index as */*
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+Processing by BeersController#index as */*
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.2ms | Allocations: 1479)
+
+
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.3ms | Allocations: 1461)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 09:20:23 -0500
+Processing by BreweriesController#index as */*
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Started GET "/beers" for ::1 at 2020-10-01 09:20:23 -0500
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.2ms | Allocations: 1262)
+
+
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.2ms | Allocations: 972)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 09:22:49 -0500
+Started GET "/beers" for ::1 at 2020-10-01 09:22:49 -0500
+Processing by BreweriesController#index as */*
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.3ms | Allocations: 1256)
+
+
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.3ms | Allocations: 972)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 09:23:09 -0500
+Started GET "/beers" for ::1 at 2020-10-01 09:23:09 -0500
+Processing by BreweriesController#index as */*
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.3ms | Allocations: 1332)
+
+
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.3ms | Allocations: 1945)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 09:27:44 -0500
+Started GET "/beers" for ::1 at 2020-10-01 09:27:44 -0500
+Processing by BreweriesController#index as */*
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.3ms | Allocations: 1091)
+
+
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.3ms | Allocations: 972)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 09:28:00 -0500
+Started GET "/beers" for ::1 at 2020-10-01 09:28:00 -0500
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.3ms | Allocations: 972)
+
+
+Processing by BreweriesController#index as */*
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.3ms | Allocations: 1070)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 09:29:20 -0500
+Started GET "/beers" for ::1 at 2020-10-01 09:29:20 -0500
+Processing by BreweriesController#index as */*
+Processing by BeersController#index as */*
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.3ms | Allocations: 1221)
+
+
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.3ms | Allocations: 1919)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 09:36:31 -0500
+Started GET "/beers" for ::1 at 2020-10-01 09:36:31 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (23.4ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+Processing by BreweriesController#index as */*
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+  [1m[36mBrewery Load (0.6ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+Completed 200 OK in 29ms (Views: 5.1ms | ActiveRecord: 23.4ms | Allocations: 1422)
+
+
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.6ms | Allocations: 1540)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 09:36:46 -0500
+Started GET "/beers" for ::1 at 2020-10-01 09:36:46 -0500
+Processing by BreweriesController#index as */*
+Processing by BeersController#index as */*
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.3ms | Allocations: 1835)
+
+
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.3ms | Allocations: 1919)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 09:37:01 -0500
+Started GET "/beers" for ::1 at 2020-10-01 09:37:01 -0500
+Processing by BreweriesController#index as */*
+  [1m[36mBrewery Load (0.4ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (1.1ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 1.1ms | Allocations: 992)
+
+
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.4ms | Allocations: 2161)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 09:37:25 -0500
+Started GET "/beers" for ::1 at 2020-10-01 09:37:25 -0500
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+Processing by BreweriesController#index as */*
+  [1m[36mBrewery Load (0.4ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.4ms | Allocations: 1785)
+
+
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.4ms | Allocations: 1322)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 09:37:52 -0500
+Processing by BreweriesController#index as */*
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Started GET "/beers" for ::1 at 2020-10-01 09:37:52 -0500
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.3ms | Allocations: 1342)
+
+
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.2ms | Allocations: 972)
+
+
+Started POST "/beers" for ::1 at 2020-10-01 09:39:46 -0500
+Processing by BeersController#create as JSON
+  Parameters: {"brewery_id"=>"17", "name"=>"Bud Light", "style"=>"Lager", "abv"=>"4", "img_src"=>"efvg", "beer"=>{"name"=>"Bud Light", "style"=>"Lager", "abv"=>"4", "img_src"=>"efvg", "brewery_id"=>"17"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+  [1m[36mBeer Create (42.3ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "abv", "img_src", "brewery_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Bud Light"], ["style", "Lager"], ["abv", "4"], ["img_src", "efvg"], ["brewery_id", 17], ["created_at", "2020-10-01 14:39:47.255808"], ["updated_at", "2020-10-01 14:39:47.255808"]]
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+Completed 201 Created in 387ms (Views: 2.8ms | ActiveRecord: 44.7ms | Allocations: 7131)
+
+
+Started GET "/beers" for ::1 at 2020-10-01 09:40:42 -0500
+Started GET "/breweries" for ::1 at 2020-10-01 09:40:42 -0500
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Processing by BreweriesController#index as */*
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.3ms | Allocations: 1414)
+
+
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.3ms | Allocations: 1235)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 09:41:39 -0500
+Started GET "/beers" for ::1 at 2020-10-01 09:41:39 -0500
+Processing by BeersController#index as */*
+Processing by BreweriesController#index as */*
+  [1m[36mBrewery Load (0.5ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.3ms | Allocations: 1911)
+
+
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.5ms | Allocations: 2102)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 09:44:33 -0500
+Started GET "/beers" for ::1 at 2020-10-01 09:44:33 -0500
+Processing by BreweriesController#index as */*
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.3ms | Allocations: 1087)
+
+
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.2ms | Allocations: 1198)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 09:45:49 -0500
+Started GET "/beers" for ::1 at 2020-10-01 09:45:49 -0500
+Processing by BreweriesController#index as */*
+Processing by BeersController#index as */*
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 7.5ms | ActiveRecord: 0.3ms | Allocations: 2230)
+
+
+Completed 200 OK in 11ms (Views: 8.2ms | ActiveRecord: 0.3ms | Allocations: 2028)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 09:55:07 -0500
+Started GET "/beers" for ::1 at 2020-10-01 09:55:07 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BreweriesController#index as */*
+Processing by BeersController#index as */*
+  [1m[36mBrewery Load (0.7ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  [1m[36mBeer Load (0.5ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.7ms | Allocations: 1884)
+
+
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.5ms | Allocations: 2135)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 09:57:11 -0500
+Started GET "/beers" for ::1 at 2020-10-01 09:57:11 -0500
+Processing by BreweriesController#index as */*
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (2.1ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  [1m[36mBrewery Load (24.8ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 5.2ms | ActiveRecord: 2.1ms | Allocations: 1781)
+
+
+Completed 200 OK in 35ms (Views: 9.9ms | ActiveRecord: 24.8ms | Allocations: 2283)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 09:59:04 -0500
+Processing by BreweriesController#index as */*
+  [1m[36mBrewery Load (0.4ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.4ms | Allocations: 1070)
+
+
+Started GET "/beers" for ::1 at 2020-10-01 09:59:04 -0500
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.5ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 4.8ms | ActiveRecord: 0.5ms | Allocations: 1146)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 11:34:15 -0500
+Started GET "/beers" for ::1 at 2020-10-01 11:34:15 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BreweriesController#index as */*
+Processing by BeersController#index as */*
+  [1m[36mBrewery Load (0.9ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  [1m[36mBeer Load (0.8ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 16ms (Views: 12.4ms | ActiveRecord: 0.9ms | Allocations: 1886)
+
+
+Completed 200 OK in 17ms (Views: 15.2ms | ActiveRecord: 0.8ms | Allocations: 2131)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 11:36:09 -0500
+Started GET "/beers" for ::1 at 2020-10-01 11:36:09 -0500
+Processing by BreweriesController#index as */*
+Processing by BeersController#index as */*
+  [1m[36mBrewery Load (23.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  [1m[36mBeer Load (0.5ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 29ms (Views: 5.2ms | ActiveRecord: 23.3ms | Allocations: 1873)
+
+
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.5ms | Allocations: 2115)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 11:44:26 -0500
+Started GET "/beers" for ::1 at 2020-10-01 11:44:26 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BreweriesController#index as */*
+Processing by BeersController#index as */*
+  [1m[36mBrewery Load (34.1ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  [1m[36mBeer Load (117.7ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 163ms (Views: 126.4ms | ActiveRecord: 34.1ms | Allocations: 2071)
+
+
+Completed 200 OK in 127ms (Views: 8.9ms | ActiveRecord: 117.7ms | Allocations: 2118)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 11:46:54 -0500
+Started GET "/beers" for ::1 at 2020-10-01 11:46:54 -0500
+Processing by BeersController#index as */*
+Processing by BreweriesController#index as */*
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.3ms | Allocations: 1688)
+
+
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.3ms | Allocations: 2247)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 11:48:10 -0500
+Started GET "/beers" for ::1 at 2020-10-01 11:48:10 -0500
+Processing by BeersController#index as */*
+Processing by BreweriesController#index as */*
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.2ms | Allocations: 1301)
+
+
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.3ms | Allocations: 2302)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 11:48:22 -0500
+Started GET "/beers" for ::1 at 2020-10-01 11:48:22 -0500
+Processing by BreweriesController#index as */*
+Processing by BeersController#index as */*
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+  [1m[36mBeer Load (2.4ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+Completed 200 OK in 10ms (Views: 7.6ms | ActiveRecord: 0.3ms | Allocations: 1415)
+
+
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 9.9ms | ActiveRecord: 2.4ms | Allocations: 2449)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 11:50:01 -0500
+Processing by BreweriesController#index as */*
+  [1m[36mBrewery Load (26.0ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+Started GET "/beers" for ::1 at 2020-10-01 11:50:01 -0500
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 33ms (Views: 6.4ms | ActiveRecord: 26.0ms | Allocations: 1273)
+
+
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.3ms | Allocations: 1146)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 11:54:41 -0500
+Started GET "/beers" for ::1 at 2020-10-01 11:54:41 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BreweriesController#index as */*
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (29.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  [1m[36mBrewery Load (0.4ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 39ms (Views: 9.5ms | ActiveRecord: 29.3ms | Allocations: 2113)
+
+
+Completed 200 OK in 39ms (Views: 38.1ms | ActiveRecord: 0.4ms | Allocations: 1861)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 11:57:25 -0500
+Started GET "/beers" for ::1 at 2020-10-01 11:57:25 -0500
+Processing by BreweriesController#index as */*
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Processing by BeersController#index as */*
+Completed 200 OK in 12ms (Views: 8.1ms | ActiveRecord: 0.3ms | Allocations: 1341)
+
+
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.2ms | Allocations: 1358)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 12:00:37 -0500
+Processing by BreweriesController#index as */*
+  [1m[36mBrewery Load (0.4ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.4ms | Allocations: 1085)
+
+
+Started GET "/beers" for ::1 at 2020-10-01 12:00:37 -0500
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.4ms | Allocations: 1146)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 12:17:47 -0500
+Started GET "/beers" for ::1 at 2020-10-01 12:17:47 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BeersController#index as */*
+Processing by BreweriesController#index as */*
+  [1m[36mBeer Load (0.7ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  [1m[36mBrewery Load (0.8ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.7ms | Allocations: 1960)
+
+
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.8ms | Allocations: 2125)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 12:18:03 -0500
+Started GET "/beers" for ::1 at 2020-10-01 12:18:03 -0500
+Processing by BreweriesController#index as */*
+Processing by BeersController#index as */*
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 9.2ms | ActiveRecord: 0.3ms | Allocations: 2238)
+
+
+Completed 200 OK in 11ms (Views: 8.3ms | ActiveRecord: 0.3ms | Allocations: 2033)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 12:18:14 -0500
+Processing by BreweriesController#index as */*
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Started GET "/beers" for ::1 at 2020-10-01 12:18:14 -0500
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.3ms | Allocations: 1339)
+
+
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (11.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 21ms (Views: 8.3ms | ActiveRecord: 11.3ms | Allocations: 1167)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 12:21:21 -0500
+Started GET "/beers" for ::1 at 2020-10-01 12:21:21 -0500
+Processing by BreweriesController#index as */*
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.3ms | Allocations: 1842)
+
+
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.4ms | Allocations: 1479)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 12:28:48 -0500
+Started GET "/beers" for ::1 at 2020-10-01 12:28:48 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BreweriesController#index as */*
+  [1m[36mBrewery Load (19.1ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (1.7ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 35ms (Views: 14.9ms | ActiveRecord: 19.1ms | Allocations: 1888)
+
+
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 1.7ms | Allocations: 2024)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 12:29:01 -0500
+Started GET "/beers" for ::1 at 2020-10-01 12:29:01 -0500
+Processing by BreweriesController#index as */*
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.9ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  [1m[36mBrewery Load (9.5ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.9ms | Allocations: 2115)
+
+
+Completed 200 OK in 20ms (Views: 10.3ms | ActiveRecord: 9.5ms | Allocations: 1877)
+
+
+Started DELETE "/beers/16" for ::1 at 2020-10-01 13:47:51 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BeersController#destroy as */*
+  Parameters: {"id"=>"16"}
+  [1m[36mBeer Load (0.7ms)[0m  [1m[34mSELECT "beers".* FROM "beers" WHERE "beers"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/beers_controller.rb:44:in `set_beer'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/beers_controller.rb:38:in `destroy'
+  [1m[36mBeer Destroy (105.0ms)[0m  [1m[31mDELETE FROM "beers" WHERE "beers"."id" = ?[0m  [["id", 16]]
+  ↳ app/controllers/beers_controller.rb:38:in `destroy'
+  [1m[35m (393.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/beers_controller.rb:38:in `destroy'
+Completed 204 No Content in 517ms (ActiveRecord: 499.7ms | Allocations: 2576)
+
+
+Started DELETE "/beers/17" for ::1 at 2020-10-01 13:47:54 -0500
+Processing by BeersController#destroy as */*
+  Parameters: {"id"=>"17"}
+  [1m[36mBeer Load (74.8ms)[0m  [1m[34mSELECT "beers".* FROM "beers" WHERE "beers"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/beers_controller.rb:44:in `set_beer'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/beers_controller.rb:38:in `destroy'
+  [1m[36mBeer Destroy (47.8ms)[0m  [1m[31mDELETE FROM "beers" WHERE "beers"."id" = ?[0m  [["id", 17]]
+  ↳ app/controllers/beers_controller.rb:38:in `destroy'
+  [1m[35m (251.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/beers_controller.rb:38:in `destroy'
+Completed 204 No Content in 598ms (ActiveRecord: 373.8ms | Allocations: 3134)
+
+
+Started DELETE "/beers/16" for ::1 at 2020-10-01 13:47:55 -0500
+Processing by BeersController#destroy as */*
+  Parameters: {"id"=>"16"}
+  [1m[36mBeer Load (129.7ms)[0m  [1m[34mSELECT "beers".* FROM "beers" WHERE "beers"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/beers_controller.rb:44:in `set_beer'
+Completed 404 Not Found in 240ms (ActiveRecord: 129.7ms | Allocations: 2100)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Beer with 'id'=16):
+  
+app/controllers/beers_controller.rb:44:in `set_beer'
+Started DELETE "/beers/16" for ::1 at 2020-10-01 13:48:15 -0500
+Processing by BeersController#destroy as */*
+  Parameters: {"id"=>"16"}
+  [1m[36mBeer Load (0.1ms)[0m  [1m[34mSELECT "beers".* FROM "beers" WHERE "beers"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/beers_controller.rb:44:in `set_beer'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms | Allocations: 606)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Beer with 'id'=16):
+  
+app/controllers/beers_controller.rb:44:in `set_beer'
+Started GET "/breweries" for ::1 at 2020-10-01 13:48:21 -0500
+Started GET "/beers" for ::1 at 2020-10-01 13:48:21 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BreweriesController#index as */*
+Processing by BeersController#index as */*
+  [1m[36mBrewery Load (0.4ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.4ms | Allocations: 1871)
+
+
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.2ms | Allocations: 1787)
+
+
+Started POST "/beers" for ::1 at 2020-10-01 13:49:11 -0500
+Processing by BeersController#create as JSON
+  Parameters: {"brewery_id"=>"17", "name"=>"Bud Light", "style"=>"Lager", "abv"=>"4", "img_src"=>"ergetg", "beer"=>{"name"=>"Bud Light", "style"=>"Lager", "abv"=>"4", "img_src"=>"ergetg", "brewery_id"=>"17"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+  [1m[36mBeer Create (57.3ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "abv", "img_src", "brewery_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Bud Light"], ["style", "Lager"], ["abv", "4"], ["img_src", "ergetg"], ["brewery_id", 17], ["created_at", "2020-10-01 18:49:12.052906"], ["updated_at", "2020-10-01 18:49:12.052906"]]
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+  [1m[35m (83.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+Completed 201 Created in 150ms (Views: 0.9ms | ActiveRecord: 141.0ms | Allocations: 3836)
+
+
+Started GET "/beers" for ::1 at 2020-10-01 13:49:23 -0500
+Started GET "/breweries" for ::1 at 2020-10-01 13:49:23 -0500
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+Processing by BreweriesController#index as */*
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.2ms | Allocations: 1931)
+
+
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.2ms | Allocations: 1325)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 13:50:36 -0500
+Started GET "/beers" for ::1 at 2020-10-01 13:50:36 -0500
+Processing by BreweriesController#index as */*
+Processing by BeersController#index as */*
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.2ms | Allocations: 1408)
+
+
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.2ms | Allocations: 1936)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 13:51:29 -0500
+Started GET "/beers" for ::1 at 2020-10-01 13:51:29 -0500
+Processing by BreweriesController#index as */*
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.3ms | Allocations: 2057)
+
+
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.3ms | Allocations: 1327)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 13:53:37 -0500
+Started GET "/beers" for ::1 at 2020-10-01 13:53:37 -0500
+Processing by BreweriesController#index as */*
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+Processing by BeersController#index as */*
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.2ms | Allocations: 1475)
+
+
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.2ms | Allocations: 1517)
+
+
+Started GET "/beers" for ::1 at 2020-10-01 13:57:15 -0500
+Started GET "/breweries" for ::1 at 2020-10-01 13:57:15 -0500
+Processing by BeersController#index as */*
+Processing by BreweriesController#index as */*
+  [1m[36mBeer Load (0.1ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.1ms | Allocations: 1740)
+
+
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.2ms | Allocations: 1935)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 14:08:57 -0500
+Started GET "/beers" for ::1 at 2020-10-01 14:08:57 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (3.7ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+Processing by BreweriesController#index as */*
+  [1m[36mBrewery Load (1.0ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 9.8ms | ActiveRecord: 3.7ms | Allocations: 1782)
+
+
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 1.0ms | Allocations: 1830)
+
+
+Started POST "/beers" for ::1 at 2020-10-01 14:09:25 -0500
+Processing by BeersController#create as JSON
+  Parameters: {"brewery_id"=>"17", "name"=>"Bud", "style"=>"Lager", "abv"=>"4", "img_src"=>"wvewrvwrf", "beer"=>{"name"=>"Bud", "style"=>"Lager", "abv"=>"4", "img_src"=>"wvewrvwrf", "brewery_id"=>"17"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+  [1m[36mBeer Create (62.9ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "abv", "img_src", "brewery_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Bud"], ["style", "Lager"], ["abv", "4"], ["img_src", "wvewrvwrf"], ["brewery_id", 17], ["created_at", "2020-10-01 19:09:25.582441"], ["updated_at", "2020-10-01 19:09:25.582441"]]
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+Completed 201 Created in 74ms (Views: 0.6ms | ActiveRecord: 65.0ms | Allocations: 3832)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 14:09:31 -0500
+Started GET "/beers" for ::1 at 2020-10-01 14:09:31 -0500
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Processing by BreweriesController#index as */*
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.4ms | Allocations: 1333)
+
+
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.3ms | Allocations: 1287)
+
+
+Started POST "/beers" for ::1 at 2020-10-01 14:10:03 -0500
+Processing by BeersController#create as JSON
+  Parameters: {"brewery_id"=>"17", "name"=>"Bud Lime", "style"=>"Lager", "abv"=>"4", "img_src"=>"ergetg", "beer"=>{"name"=>"Bud Lime", "style"=>"Lager", "abv"=>"4", "img_src"=>"ergetg", "brewery_id"=>"17"}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+  [1m[36mBrewery Load (2.7ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+  [1m[36mBeer Create (0.7ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "abv", "img_src", "brewery_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Bud Lime"], ["style", "Lager"], ["abv", "4"], ["img_src", "ergetg"], ["brewery_id", 17], ["created_at", "2020-10-01 19:10:03.985939"], ["updated_at", "2020-10-01 19:10:03.985939"]]
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+Completed 201 Created in 23ms (Views: 1.7ms | ActiveRecord: 5.3ms | Allocations: 3814)
+
+
+Started GET "/beers" for ::1 at 2020-10-01 14:10:08 -0500
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.5ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.5ms | Allocations: 1454)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 14:10:08 -0500
+Processing by BreweriesController#index as */*
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.3ms | Allocations: 1070)
+
+
+Started POST "/beers" for ::1 at 2020-10-01 14:10:26 -0500
+Processing by BeersController#create as JSON
+  Parameters: {"brewery_id"=>"17", "name"=>"Corona", "style"=>"lager", "abv"=>"4", "img_src"=>"wefqerg", "beer"=>{"name"=>"Corona", "style"=>"lager", "abv"=>"4", "img_src"=>"wefqerg", "brewery_id"=>"17"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+  [1m[36mBeer Create (0.6ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "abv", "img_src", "brewery_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Corona"], ["style", "lager"], ["abv", "4"], ["img_src", "wefqerg"], ["brewery_id", 17], ["created_at", "2020-10-01 19:10:26.897691"], ["updated_at", "2020-10-01 19:10:26.897691"]]
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+Completed 201 Created in 17ms (Views: 1.5ms | ActiveRecord: 2.0ms | Allocations: 3812)
+
+
+Started POST "/beers" for ::1 at 2020-10-01 14:10:31 -0500
+Processing by BeersController#create as JSON
+  Parameters: {"brewery_id"=>"17", "name"=>"Corona light", "style"=>"lager", "abv"=>"4", "img_src"=>"wefqerg", "beer"=>{"name"=>"Corona light", "style"=>"lager", "abv"=>"4", "img_src"=>"wefqerg", "brewery_id"=>"17"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+  [1m[36mBeer Create (0.5ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "abv", "img_src", "brewery_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Corona light"], ["style", "lager"], ["abv", "4"], ["img_src", "wefqerg"], ["brewery_id", 17], ["created_at", "2020-10-01 19:10:31.622764"], ["updated_at", "2020-10-01 19:10:31.622764"]]
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+Completed 201 Created in 12ms (Views: 1.1ms | ActiveRecord: 2.6ms | Allocations: 3812)
+
+
+Started POST "/beers" for ::1 at 2020-10-01 14:10:41 -0500
+Processing by BeersController#create as JSON
+  Parameters: {"brewery_id"=>"17", "name"=>"coors light", "style"=>"lager", "abv"=>"4", "img_src"=>"wefqerg", "beer"=>{"name"=>"coors light", "style"=>"lager", "abv"=>"4", "img_src"=>"wefqerg", "brewery_id"=>"17"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+  [1m[36mBeer Create (0.5ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "abv", "img_src", "brewery_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "coors light"], ["style", "lager"], ["abv", "4"], ["img_src", "wefqerg"], ["brewery_id", 17], ["created_at", "2020-10-01 19:10:41.239155"], ["updated_at", "2020-10-01 19:10:41.239155"]]
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+Completed 201 Created in 15ms (Views: 0.6ms | ActiveRecord: 2.6ms | Allocations: 3815)
+
+
+Started POST "/beers" for ::1 at 2020-10-01 14:10:44 -0500
+Processing by BeersController#create as JSON
+  Parameters: {"brewery_id"=>"17", "name"=>"coors ", "style"=>"lager", "abv"=>"4", "img_src"=>"wefqerg", "beer"=>{"name"=>"coors ", "style"=>"lager", "abv"=>"4", "img_src"=>"wefqerg", "brewery_id"=>"17"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+  [1m[36mBeer Create (0.5ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "abv", "img_src", "brewery_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "coors "], ["style", "lager"], ["abv", "4"], ["img_src", "wefqerg"], ["brewery_id", 17], ["created_at", "2020-10-01 19:10:44.749263"], ["updated_at", "2020-10-01 19:10:44.749263"]]
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+Completed 201 Created in 16ms (Views: 1.3ms | ActiveRecord: 3.0ms | Allocations: 3812)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 14:10:46 -0500
+Started GET "/beers" for ::1 at 2020-10-01 14:10:46 -0500
+Processing by BreweriesController#index as */*
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.5ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 13ms (Views: 10.4ms | ActiveRecord: 0.3ms | Allocations: 2131)
+
+
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.5ms | Allocations: 2549)
+
+
+Started POST "/beers" for ::1 at 2020-10-01 14:11:48 -0500
+Processing by BeersController#create as JSON
+  Parameters: {"brewery_id"=>"16", "name"=>"Arrogant Basterd", "style"=>"Ale", "abv"=>"7.5", "img_src"=>"wvewrvwrf", "beer"=>{"name"=>"Arrogant Basterd", "style"=>"Ale", "abv"=>"7.5", "img_src"=>"wvewrvwrf", "brewery_id"=>"16"}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+  [1m[36mBrewery Load (10.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+  [1m[36mBeer Create (0.6ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "abv", "img_src", "brewery_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Arrogant Basterd"], ["style", "Ale"], ["abv", "7.5"], ["img_src", "wvewrvwrf"], ["brewery_id", 16], ["created_at", "2020-10-01 19:11:48.621568"], ["updated_at", "2020-10-01 19:11:48.621568"]]
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+Completed 201 Created in 26ms (Views: 0.9ms | ActiveRecord: 13.2ms | Allocations: 3827)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 14:11:51 -0500
+Started GET "/beers" for ::1 at 2020-10-01 14:11:51 -0500
+Processing by BreweriesController#index as */*
+Processing by BeersController#index as */*
+  [1m[36mBrewery Load (0.5ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.5ms | Allocations: 1285)
+
+
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.4ms | Allocations: 3156)
+
+
+Started DELETE "/beers/25" for ::1 at 2020-10-01 14:11:59 -0500
+Processing by BeersController#destroy as */*
+  Parameters: {"id"=>"25"}
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT "beers".* FROM "beers" WHERE "beers"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/beers_controller.rb:44:in `set_beer'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/beers_controller.rb:38:in `destroy'
+  [1m[36mBeer Destroy (0.8ms)[0m  [1m[31mDELETE FROM "beers" WHERE "beers"."id" = ?[0m  [["id", 25]]
+  ↳ app/controllers/beers_controller.rb:38:in `destroy'
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/beers_controller.rb:38:in `destroy'
+Completed 204 No Content in 12ms (ActiveRecord: 3.7ms | Allocations: 2421)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 14:12:19 -0500
+Started GET "/beers" for ::1 at 2020-10-01 14:12:19 -0500
+Processing by BreweriesController#index as */*
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.3ms | Allocations: 1089)
+
+
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.4ms | Allocations: 2017)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 14:14:19 -0500
+Started GET "/beers" for ::1 at 2020-10-01 14:14:19 -0500
+Processing by BreweriesController#index as */*
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+Processing by BeersController#index as */*
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.3ms | Allocations: 1259)
+
+
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.4ms | Allocations: 2558)
+
+
+Started POST "/beers" for ::1 at 2020-10-01 14:14:36 -0500
+Processing by BeersController#create as JSON
+  Parameters: {"brewery_id"=>"16", "name"=>"Arrogant Basterd", "style"=>"Ale", "abv"=>"7.5", "img_src"=>"wefqerg", "beer"=>{"name"=>"Arrogant Basterd", "style"=>"Ale", "abv"=>"7.5", "img_src"=>"wefqerg", "brewery_id"=>"16"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+  [1m[36mBrewery Load (0.3ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+  [1m[36mBeer Create (0.6ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "abv", "img_src", "brewery_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Arrogant Basterd"], ["style", "Ale"], ["abv", "7.5"], ["img_src", "wefqerg"], ["brewery_id", 16], ["created_at", "2020-10-01 19:14:36.575243"], ["updated_at", "2020-10-01 19:14:36.575243"]]
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+Completed 201 Created in 27ms (Views: 1.1ms | ActiveRecord: 2.8ms | Allocations: 3812)
+
+
+Started GET "/beers" for ::1 at 2020-10-01 14:16:59 -0500
+Processing by BeersController#index as */*
+Started GET "/breweries" for ::1 at 2020-10-01 14:16:59 -0500
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.4ms | Allocations: 2221)
+
+
+Processing by BreweriesController#index as */*
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.2ms | Allocations: 1071)
+
+
+Started POST "/beers" for ::1 at 2020-10-01 14:17:19 -0500
+Processing by BeersController#create as JSON
+  Parameters: {"brewery_id"=>"16", "name"=>"Double Arrogant Basterd", "style"=>"Ale", "abv"=>"7.5", "img_src"=>"ergetg", "beer"=>{"name"=>"Double Arrogant Basterd", "style"=>"Ale", "abv"=>"7.5", "img_src"=>"ergetg", "brewery_id"=>"16"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+  [1m[36mBrewery Load (0.2ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+  [1m[36mBeer Create (1.2ms)[0m  [1m[32mINSERT INTO "beers" ("name", "style", "abv", "img_src", "brewery_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Double Arrogant Basterd"], ["style", "Ale"], ["abv", "7.5"], ["img_src", "ergetg"], ["brewery_id", 16], ["created_at", "2020-10-01 19:17:19.164219"], ["updated_at", "2020-10-01 19:17:19.164219"]]
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/beers_controller.rb:20:in `create'
+Completed 201 Created in 16ms (Views: 1.0ms | ActiveRecord: 3.5ms | Allocations: 3812)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 14:28:59 -0500
+Started GET "/beers" for ::1 at 2020-10-01 14:28:59 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BreweriesController#index as */*
+Processing by BeersController#index as */*
+  [1m[36mBrewery Load (23.9ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  [1m[36mBeer Load (0.8ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 26ms (Views: 23.9ms | ActiveRecord: 0.8ms | Allocations: 3004)
+
+
+Completed 200 OK in 73ms (Views: 42.5ms | ActiveRecord: 23.9ms | Allocations: 3523)
+
+
+Started DELETE "/beers/27" for ::1 at 2020-10-01 14:29:42 -0500
+Processing by BeersController#destroy as */*
+  Parameters: {"id"=>"27"}
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT "beers".* FROM "beers" WHERE "beers"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/beers_controller.rb:44:in `set_beer'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/beers_controller.rb:38:in `destroy'
+  [1m[36mBeer Destroy (58.4ms)[0m  [1m[31mDELETE FROM "beers" WHERE "beers"."id" = ?[0m  [["id", 27]]
+  ↳ app/controllers/beers_controller.rb:38:in `destroy'
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/beers_controller.rb:38:in `destroy'
+Completed 204 No Content in 78ms (ActiveRecord: 60.6ms | Allocations: 2421)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 14:30:23 -0500
+Processing by BreweriesController#index as */*
+  [1m[36mBrewery Load (0.5ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.5ms | Allocations: 1354)
+
+
+Started GET "/beers" for ::1 at 2020-10-01 14:30:23 -0500
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.8ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.8ms | Allocations: 2191)
+
+
+Started DELETE "/beers/23" for ::1 at 2020-10-01 14:30:30 -0500
+Processing by BeersController#destroy as */*
+  Parameters: {"id"=>"23"}
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers" WHERE "beers"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/beers_controller.rb:44:in `set_beer'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/beers_controller.rb:38:in `destroy'
+  [1m[36mBeer Destroy (0.7ms)[0m  [1m[31mDELETE FROM "beers" WHERE "beers"."id" = ?[0m  [["id", 23]]
+  ↳ app/controllers/beers_controller.rb:38:in `destroy'
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/beers_controller.rb:38:in `destroy'
+Completed 204 No Content in 13ms (ActiveRecord: 3.4ms | Allocations: 2400)
+
+
+Started GET "/breweries" for ::1 at 2020-10-01 14:30:39 -0500
+Started GET "/beers" for ::1 at 2020-10-01 14:30:39 -0500
+Processing by BreweriesController#index as */*
+  [1m[36mBrewery Load (0.4ms)[0m  [1m[34mSELECT "breweries".* FROM "breweries"[0m
+  ↳ app/controllers/breweries_controller.rb:8:in `index'
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.6ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.4ms | Allocations: 1283)
+
+
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.6ms | Allocations: 2450)
+
+
+Started DELETE "/beers/24" for ::1 at 2020-10-01 14:30:45 -0500
+Processing by BeersController#destroy as */*
+  Parameters: {"id"=>"24"}
+  [1m[36mBeer Load (0.6ms)[0m  [1m[34mSELECT "beers".* FROM "beers" WHERE "beers"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/beers_controller.rb:44:in `set_beer'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/beers_controller.rb:38:in `destroy'
+  [1m[36mBeer Destroy (0.6ms)[0m  [1m[31mDELETE FROM "beers" WHERE "beers"."id" = ?[0m  [["id", 24]]
+  ↳ app/controllers/beers_controller.rb:38:in `destroy'
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/beers_controller.rb:38:in `destroy'
+Completed 204 No Content in 12ms (ActiveRecord: 3.5ms | Allocations: 2421)
+
+
+Started DELETE "/beers/26" for ::1 at 2020-10-01 14:31:09 -0500
+Processing by BeersController#destroy as */*
+  Parameters: {"id"=>"26"}
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers" WHERE "beers"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/beers_controller.rb:44:in `set_beer'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/beers_controller.rb:38:in `destroy'
+  [1m[36mBeer Destroy (0.7ms)[0m  [1m[31mDELETE FROM "beers" WHERE "beers"."id" = ?[0m  [["id", 26]]
+  ↳ app/controllers/beers_controller.rb:38:in `destroy'
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/beers_controller.rb:38:in `destroy'
+Completed 204 No Content in 13ms (ActiveRecord: 3.1ms | Allocations: 2400)
+
+
